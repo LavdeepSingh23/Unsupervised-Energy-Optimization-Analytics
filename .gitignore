@@ -2,4 +2,4 @@ aifreng/
 .vscode/
 __pycache__/
 *.pyc
-.env
+.envs
