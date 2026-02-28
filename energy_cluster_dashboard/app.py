@@ -222,10 +222,10 @@ def load_data():
     pca_path = os.path.join(BASE_DIR, "pca_transformed_data.csv")
     final_path = os.path.join(BASE_DIR, "final_feature_engineered.csv")
 
-    X_pca = pd.read_csv(pca_path)
+    X_pca_raw = pd.read_csv(pca_path)
     df = pd.read_csv(final_path)
 
-    return X_pca, df
+    return X_pca_raw, df
 
 
 # ─────────────────────────────────────────────
