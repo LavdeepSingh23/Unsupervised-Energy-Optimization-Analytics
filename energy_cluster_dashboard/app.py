@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import os
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -226,7 +227,6 @@ def load_data():
 
     return X_pca, df
 
-pc_cols = [c for c in X_pca_raw.columns if c.startswith("PC")]
 
 # ─────────────────────────────────────────────
 # PCA VARIANCE (proxy from column variances)
