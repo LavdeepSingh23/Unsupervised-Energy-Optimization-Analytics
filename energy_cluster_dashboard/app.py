@@ -217,16 +217,16 @@ PLOT_LAYOUT = dict(
 # ─────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    BASE_DIR  = os.path.dirname(os.path.abspath(__file__))
+    pca_path  = os.path.join(BASE_DIR, "pca_transformed_data.csv")
+    feat_path = os.path.join(BASE_DIR, "final_feature_engineered.csv")
+    X_pca = pd.read_csv(pca_path)
+    df    = pd.read_csv(feat_path)
+    return X_pca, df
 
-    pca_path = os.path.join(BASE_DIR, "pca_transformed_data.csv")
-    final_path = os.path.join(BASE_DIR, "final_feature_engineered.csv")
+X_pca_raw, original_df_raw = load_data()
 
-    X_pca_raw = pd.read_csv(pca_path)
-    df = pd.read_csv(final_path)
-
-    return X_pca_raw, df
-
+pc_cols = [c for c in X_pca_raw.columns if c.startswith("PC")]
 
 # ─────────────────────────────────────────────
 # PCA VARIANCE (proxy from column variances)
