@@ -3,3 +3,5 @@ aifreng/
 __pycache__/
 *.pyc
 .envs
+secrets.toml
+__pycache__/
